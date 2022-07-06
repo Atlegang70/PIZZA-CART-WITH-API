@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Alpine-data-API.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+
+
+    <div x-data="pizzaCartWithAPIWidget" >
+
+       
+        <div x-text="massage"></div>
+        <div x-text="cartId"></div>
+        <div>
+            Who is buying the pizzas: <input type="text" x-model="username">
+        </div>
+            <div >
+            Cart Total: <strong x-text="cart.total"></strong>
+            
+            </div>
+        <table>
+
+  <template x-for="pizza in pizzas">
+    
+<tr>
+        <td x-text="pizza.flavour"> </td>
+        <td x-text="pizza.size"> </td>
+        <td> R<span x-text="pizza.price"></span> </td> 
+        <td> <button @click="add(pizza)">Buy</button> </td>
+    
+</tr>
+    </template>
+
+
+
+</table>
+    </div>
+</body>
+</html>
