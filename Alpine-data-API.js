@@ -16,9 +16,7 @@ document.addEventListener('alpine:init', () => {
              .then((result) => {
                 return this.cartId = result.data.cart_code;
                 }) 
-
-             
-        },
+            },
 
         createCart(){
 
@@ -62,3 +60,5 @@ document.addEventListener('alpine:init', () => {
       }
     });
 })
+
+
