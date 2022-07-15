@@ -74,11 +74,9 @@
     <div x-data="pizzaCartWithAPIWidget" >
 
 
-
-
-
        
         <div x-text="massage"></div>
+        <div x-text="cartId"></div>
 
         <div>
             Who is buying the pizzas:<input type="text" x-model="username"> 
@@ -96,19 +94,16 @@
         <template x-for="pizza in cart.pizzas"> 
            
 
-
-
-
             <tr>
                 <td> <strong x-text="pizza.size"></strong></td>
                 <td><span x-text="pizza.qty"></span></td>
-                <td> <button>+</button> </td>
-                <td> <button>-</button> </td>
+                <td> <button @click="add(pizza)">+</button> </td>
+                <td> <button @click="remove(pizza)">-</button> </td>
                 <td><span>R</span></td>
                 <td x-text="pizza.total"></td>
                 </tr>
 
-        </template>>
+        </template>
 
         <tr>
             <td> <strong> Cart Total:</strong></td>
